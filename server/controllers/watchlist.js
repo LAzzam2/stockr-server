@@ -179,3 +179,23 @@ exports.getWatchlist = function( userId )
 		} );
 	} );
 };
+
+exports.getCommunityWatchlist = function( userId )
+{
+	return new Promise( function( resolve, reject )
+	{
+		WatchlistItems.find(
+		{
+		},
+		function( error, watchlistItems )
+		{
+			if( error )
+			{
+				console.log( error );
+				reject( error );
+			}
+
+			resolve( watchlistItems );
+		} );
+	} );
+};
