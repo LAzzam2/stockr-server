@@ -4,9 +4,9 @@ var mongoose  = require( 'mongoose' );
 var User      = mongoose.model( 'User' );
 var WatchlistItems = mongoose.model( 'WatchlistItems' );
 var Promise   = require( 'bluebird' );
-Promise.promisifyAll( mongoose );
-Promise.promisifyAll( User );
-Promise.promisifyAll( User.prototype );
+// Promise.promisifyAll( mongoose );
+// Promise.promisifyAll( User );
+// Promise.promisifyAll( User.prototype );
 
 var config    = require( '../config/config.js' );
 var validator = require( 'validator' );
