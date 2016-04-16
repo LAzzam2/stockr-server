@@ -10,7 +10,7 @@ module.exports =
 	root: rootPath,
 	port: process.env.NODE_PORT,
 	hostname: process.env.NODE_HOST,
-	sessionSecret: process.env.SESSION_SECRET,
+	sessionSecret: process.env.SESSION_SECRET
 
 	baseUrl: function(  )
 	{
