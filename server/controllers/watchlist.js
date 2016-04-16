@@ -179,6 +179,7 @@ exports.getWatchlist = function( userId )
 		} );
 	} );
 };
+<<<<<<< HEAD
 
 exports.getCommunityWatchlist = function( )
 {
@@ -199,3 +200,5 @@ exports.getCommunityWatchlist = function( )
 		} );
 	} );
 };
+=======
+>>>>>>> parent of 0b7a23d... communty watchlist
