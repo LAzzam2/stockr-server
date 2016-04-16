@@ -220,6 +220,20 @@ module.exports = function( app )
 		} );
 	} );
 
+	app.get( '/api/tcg/watchlist', function( req, res, next )
+	{
+
+		watchlist.getCommunityWatchlist( )
+		.then( function( watchlistItems )
+		{
+			res.status( 200 ).send( { 'watchlistItems': watchlistItems } );
+		} )
+		.catch( function( error )
+		{
+			res.status( 500 ).send( { 'message': error } );
+		} );
+	} );
+
 
 	console.log( 'Routes successfully loaded.' );
 };

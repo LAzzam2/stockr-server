@@ -180,7 +180,7 @@ exports.getWatchlist = function( userId )
 	} );
 };
 
-exports.getCommunityWatchlist = function( userId )
+exports.getCommunityWatchlist = function( )
 {
 	return new Promise( function( resolve, reject )
 	{
