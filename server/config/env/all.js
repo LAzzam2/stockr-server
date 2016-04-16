@@ -11,6 +11,7 @@ module.exports =
 	port: process.env.NODE_PORT,
 	hostname: process.env.NODE_HOST,
 	sessionSecret: process.env.SESSION_SECRET,
+	dbUri: process.env.DB_URI,
 
 	baseUrl: function(  )
 	{
@@ -24,7 +25,7 @@ module.exports =
 
 	mongo:
 	{
-		uri: 'mongodb://localhost/node-stockr-dev',  // Setup Config (!)
+		uri: process.env.DB_URI,  // Setup Config (!)
 		options:
 		{
 			db:
