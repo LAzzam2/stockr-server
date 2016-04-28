@@ -234,6 +234,25 @@ module.exports = function( app )
 		} );
 	} );
 
+	// -----------------+
+	// Stock Quote operations. |
+	// -----------------+
+
+	app.get( '/api/user/stockquote', authRequired, function( req, res, next )
+	{
+		var userId = req.user._id;
+
+		stockquote.getStockQuote( symbol )
+		.then( function( stockquote )
+		{
+			res.status( 200 ).send( { 'stockquote': stockquote } );
+		} )
+		.catch( function( error )
+		{
+			res.status( 500 ).send( { 'message': error } );
+		} );
+	} );
+
 
 	console.log( 'Routes successfully loaded.' );
 };
