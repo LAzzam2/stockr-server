@@ -15,7 +15,8 @@ var WatchlistItemSchema = new Schema( {
 	_id: String,
 	user: String,
 	ticker: String,
-	levels: Array
+	levels: Array,
+	quote: Array,
 
 } );
 
@@ -69,6 +70,7 @@ WatchlistItemSchema.statics =
 		newWatchlistItem.user = user;
 		newWatchlistItem.ticker = tickerName;
 		newWatchlistItem.levels = levels;
+		newWatchlistItem.quote = [];
 
 		return saveWithPromise( newWatchlistItem );
 	}
