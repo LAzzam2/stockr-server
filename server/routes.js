@@ -3,6 +3,7 @@
 var user     = require( './controllers/user' );
 var list     = require( './controllers/list' );
 var watchlist     = require( './controllers/watchlist' );
+var stockquote     = require( './controllers/stockquote' );
 var authentication  = require( './controllers/authentication' );
 var Promise  = require( 'bluebird' );
 
@@ -238,14 +239,14 @@ module.exports = function( app )
 	// Stock Quote operations. |
 	// -----------------+
 
-	app.get( '/api/user/stockquote', authRequired, function( req, res, next )
+	app.get( '/api/quote', authRequired, function( req, res, next )
 	{
 		var userId = req.user._id;
 
-		stockquote.getStockQuote( symbol )
+		stockquote.getQuote( symbol )
 		.then( function( stockquote )
 		{
-			res.status( 200 ).send( { 'stockquote': stockquote } );
+			res.status( 200 ).send( { 'quote': stockquote } );
 		} )
 		.catch( function( error )
 		{

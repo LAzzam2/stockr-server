@@ -11,7 +11,7 @@ var _ = require('lodash');
 var util = require('util');
 var yahooFinance = require('yahoo-finance');;
 
-exports.getStockQuote = function( )
+exports.getQuote = function( ticker )
 {
 	var FIELDS = _.flatten([
 		// // Pricing
